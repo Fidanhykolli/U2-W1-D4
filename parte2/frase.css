@@ -1,0 +1,104 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+.parole {
+    display: flex;
+    flex-direction: column;
+}
+
+
+body{
+    width: 800px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+
+#testoAlternato{
+ 
+    width: 100%;
+    margin-left: 200px;
+    margin-top: 200px;
+    height: 100%;
+}
+
+
+#testoAlternato  i{
+    text-align: left;
+    margin-left: 170px;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(45, 123, 126);
+}
+
+
+#testoAlternato p{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 80px;
+}
+
+
+/* @keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(20deg);
+  }
+} */
+
+
+@keyframes slideInDown {
+  0%{
+      opacity: 0;
+      transform: translateY(-250px);
+
+  }
+  25%, 75% {
+      opacity: 1;
+      transform: translateY(100px);
+
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(400px);
+  }
+}
+
+
+.parole i {
+  opacity: 0;
+  animation: slideInDown 5s linear 0s forwards;
+  animation-delay: 0s;
+}
+
+
+#first-i {
+  /* animation: rotate 5s linear 1s forwards; */
+  animation-delay: 2s;
+}
+
+
+#second-i {
+  animation-delay: 8s;
+}
+
+
+#third-i {
+  animation-delay: 15s; 
+}
